@@ -13,22 +13,14 @@ class TrabalhosController extends Controller
     {
         return view('cadtrab');
     }
-    public function cadastrar(Request $request){
-        $request->validate([
-            'titulo' => 'required',
-            'descricao' => 'required',
-            'dataentrega' => 'required',
-            'requisitos'=> 'required',
-            'pagamento' => 'required',
-            'autor'=> 'required',
-        ]);
+    public function store(Request $request){
             $trabalho = new Trabalhos;
 
-            $trabalho->titulo = $request-> input('tituloFormularios');
-            $trabalho->descricao = $request-> input('descricaoFormularios');
-            $trabalho->requisitos = $request-> input('requisitosFormularios');
-            $trabalho->pagamento =$request-> input('valorPagamentoFormulario');
-            $trabalho->dataentrega = $request-> input('dataEntregaFormularios');
+            $trabalho->titulo = $request->tituloFormularios;
+            $trabalho->descricao = $request->descricaoFormularios;
+            $trabalho->requisitos = $request->requisitosFormularios;
+            $trabalho->pagamento =$request->valorPagamentoFormulario;
+            $trabalho->dataentrega = $request->dataEntregaFormularios;
             $trabalho->datapublicacao = date('d-m-y');
             $trabalho->statusT = 'aguardando';
             $trabalho->autor = session('user');
