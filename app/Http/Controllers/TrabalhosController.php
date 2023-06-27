@@ -16,18 +16,18 @@ class TrabalhosController extends Controller
     public function store(Request $request){
             $trabalho = new Trabalhos;
 
-            $trabalho->titulo = $request->tituloFormularios;
-            $trabalho->descricao = $request->descricaoFormularios;
-            $trabalho->requisitos = $request->requisitosFormularios;
+            $trabalho->titulo = $request->tituloFormulario;
+            $trabalho->descricao = $request->descricaoFormulario;
+            $trabalho->requisitos = $request->requisitosFormulario;
             $trabalho->pagamento =$request->valorPagamentoFormulario;
-            $trabalho->dataentrega = $request->dataEntregaFormularios;
+            $trabalho->dataentrega = date('Y-m-d', strtotime($request->input('dataEntregaFormulario')));
             $trabalho->datapublicacao = date('d-m-y');
             $trabalho->statusT = 'aguardando';
-            $trabalho->autor = session('user');
+            $trabalho->autor = $request->autor;
 
             $trabalho->save();
 
-            return redirect('/');
+            return redirect('exibir');
                    
     }
     public function pesquisar($id){

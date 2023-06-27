@@ -9,6 +9,7 @@ class Trabalhos extends Model
 {
     use HasFactory;
     protected $table = 'trabalhos';
+    public $timestamps = false;
     protected $fillable = [
         'titulo',
         'descricao',
