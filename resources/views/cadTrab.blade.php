@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Web-Servidor</title>
-    <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
-</head>
-<body>
+
     <div class="container">
         <h2>Cadastro de novo trabalho</h2>
-        <div id="formulariosnovotrabalho">
             <p id="indiceFormularios">Formulários:</p>
-            <form action="{{ route('cadTrab') }}" method="POST">
+            <form action="/cadTrab" method="POST">
                 @csrf
                 <label for="tituloFormularios">Titulo:</label>
                 <input type="text" name="tituloFormulario" id="tituloFormularios" required>
@@ -31,10 +22,7 @@
                 <input type="hidden" name="acao" value="cadastrar" style="position: relative;">
                 
                 <div style="position: relative; top: 50px;">
-                    <button type="submit">Enviar</button>
+                    <button>Enviar</button>
                 </div>
             </form>
-        </div>
     </div>
-</body>
-</html>
