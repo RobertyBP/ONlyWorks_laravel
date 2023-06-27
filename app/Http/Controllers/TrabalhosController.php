@@ -14,6 +14,16 @@ class TrabalhosController extends Controller
         return view('cadtrab');
     }
     public function store(Request $request){
+        
+            $request->validate([
+            'titulo' => 'required',
+            'descricao' => 'required',
+            'dataentrega' => 'required',
+            'requisitos'=> 'required',
+            'pagamento' => 'required',
+            'autor'=> 'required',
+                ]);
+
             $trabalho = new Trabalhos;
 
             $trabalho->titulo = $request->tituloFormulario;
