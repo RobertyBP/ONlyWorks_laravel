@@ -14,9 +14,10 @@
     <body class="antialiased">
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 selection:bg-red-500 selection:text-white">
             <?php if(Route::has('login')): ?>
+            <div class="card" style="background-color:lightblue; border-color:darkblue;">
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     <?php if(auth()->guard()->check()): ?>
-                        <a href="<?php echo e(url('/logout')); ?>" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">logout</a>
+                        <p style="position: relative; top: -30px; left: -30px;">Olá </p>
                     <?php else: ?>
                         <a href="<?php echo e(route('login')); ?>" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -25,12 +26,12 @@
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
+              </div>
+            </div>
+                
             <?php endif; ?>
-            <div>
+            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                 <h1>Projeto Desenvolvimento Web-Servidor</h1>
-                <div id="btlogout" style=" top: 85px; left: 1155px; position: absolute; font-size: 14px;">
-                    <p style="position: relative; top: -30px; left: -30px;">Olá</p>
-                </div>
                 <div id="menu">
                             <input type="hidden" name="acao" value="cadastrotrabalho" style="position: absolute;">
                             <a href="<?php echo e(route('create')); ?>">Cadastrar Novo trabalho</a>
