@@ -4,7 +4,7 @@
             <div id="containercards">
 
                 @foreach( $listaTrabalhos as $trabalho)        
-                <div class="novotrabalho" style="margin: 0; margin-bottom: 5px;" >
+                <div class="card" style="margin: 0; margin-bottom: 5px; background-color:lightblue; border-color:darkblue;" >
                         <p class="tituloTrabalho" id="tituloTrabalho">titulo:{{ $trabalho->titulo}}</p>
                         <p class="dataPublicacaoTrabalho" id="dataPublicacaoTrabalho">Publicado: {{ $trabalho->datapublicacao }}</p>
                         <p class="dataEntregaTrabalho" id="dataEntregaTrabalho">Data entrega: {{ $trabalho->dataentrega }}</p>
